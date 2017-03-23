@@ -1,0 +1,18 @@
+<div ng-controller='userController' class="form-group">
+	<form ng-submit='create()' method="post" class="form-vertical">
+		<fieldset>
+			<legend>Registration Form</legend>
+			Email : <input type="text" name="email" ng-model='user.email'> 
+			First Name: <input type="text" name="first_name" ng-model='user.first_name'>
+			Last Name : <input type="text" name="last_name" ng-model='user.last_name'>
+			Password : <input type="password" name="password" ng-model='user.password'>
+			Password Confirmation: <input type="password" name="confirm_password" ng-model='user.confirm_password'>
+			Birthday : <input type="date" name="birthday" ng-model='user.birthday'>
+			<input type="submit" value="Create User" >
+
+		</fieldset>
+		<div ng-if='errors'>
+			<ul ng-repeat='error in errors'><li>{{error.message}}</li></ul>
+		</div>
+	</form>
+</div>
